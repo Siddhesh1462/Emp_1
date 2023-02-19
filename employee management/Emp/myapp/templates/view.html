@@ -1,0 +1,50 @@
+{% extends 'index.html' %}
+{%block title%}View All Employee Data{%endblock title%}
+{%block body %}
+<div class="dropdown show" align="right" style="padding:10px">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Remove Data
+  </a>
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    {%for emp in emps %}
+    <li><a class="dropdown-item" href="/view/{{emp.id}}">{{emp.f_name}} {{emp.l_name}}</a></li>
+    {%endfor%}
+  </div>
+</div>
+{% comment %} Display all employee detail in table {% endcomment %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Phone No</th>
+        <th scope="col">Department</th>
+        <th scope="col">Role</th>
+        <th scope="col">Sallary</th>
+        <th scope="col">Bonus</th>
+        <th scope="col">HireDate</th>
+      </tr>
+    </thead>
+    {% comment %} we used for loop for table row iteration {% endcomment %}
+    {%for emp in emps %}
+    <tbody>
+      <tr>
+        <th scope="row">{{emp.id}}</th>
+        <td>{{emp.f_name}}</td>
+        <td>{{emp.l_name}}</td>
+        <td>{{emp.phone}}</td>
+        <td>{{emp.dept.name}}</td>
+        <td>{{emp.role.name}}</td>
+        <td>{{emp.salary}}</td>
+        <td>{{emp.bonus}}</td>
+        <td>{{emp.hire_date}}</td>
+      </tr>
+
+      
+    </tbody>
+    {%endfor%}
+  </table>
+{%endblock body%}
+

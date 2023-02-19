@@ -1,0 +1,101 @@
+{% extends 'index.html' %}
+{%block title%}Add Employee{%endblock title%}
+{% load static %}
+<link rel="stylesheet" href="{% static 'add.css' %}">
+{%block body%}
+      <Div Class="Container" align="center" style="border:2px solid">
+        <Form action="/add/" method="post">
+          {% csrf_token %}
+          <H4 style="padding-top:50px">Add Employee</H4>
+          <Div Class="Input-Section">
+            <Label>First Name <Span Class="Required-Color">*</Span></Label>
+            <Input
+              Type="Text"
+              Id="First-Name-Input"
+              name="f_name"
+              value="{{f_name}}"
+              Required
+            />
+          </Div>
+          <Div Class="Input-Section">
+            <Label>Last Name <Span Class="Required-Color">*</Span></Label>
+            <Input
+              Type="Text "
+              name="l_name"
+              Id="Last-Name-Input"
+              value="{{l_name}}"
+              Required
+            />
+          </Div>
+          
+  
+          <Div Class="Input-Section">
+            <Label>Phone <Span Class="Required-Color">*</Span></Label>
+            <Input Type="number" name="phone" Id="Phone" value="{{phone}}""  Required />
+          </Div>
+          
+          <Div Class="Input-Section">
+            <Label>Department <Span Class="Required-Color">*</Span></Label>
+            <Input
+              Type="number"
+              name="dept"
+              Id="dept"
+              value="{{dept}}"
+              Required
+            />
+          </Div>
+
+          <Div Class="Input-Section">
+            <Label>Role <Span Class="Required-Color">*</Span></Label>
+            <Input
+              Type="number"
+              name="role"
+              Id="role"
+              value="{{role}}"
+              Required
+            />
+          </Div>
+
+          <Div Class="Input-Section">
+            <Label>Salary <Span Class="Required-Color">*</Span></Label>
+            <Input
+              Type="number"
+              name="salary"
+              value="{{salary}}"
+              Required
+            />
+          </Div>
+
+          <Div Class="Input-Section">
+            <Label>Bonus <Span Class="Required-Color">*</Span></Label>
+            <Input
+              Type="number"
+              name="bonus"
+              id="bonus"
+              value="{{bonus}}"
+              Required
+            />
+          </Div>
+          
+          <Div Class="Input-Section">
+            <Label>HireDate <Span Class="Required-Color">*</Span></Label>
+            <Input
+              Type="number"
+              name="hire_date"
+              id="hire_date"
+              value="{{hire_date}}"
+              Required
+            />
+            
+          </Div>
+         
+          
+
+          <Button Id="Submit-Button" style="margin-top:20px;margin-bottom:50px">Submit</Button>
+        </Form>
+        </Div>
+      </Div>
+      <!-- Script -->
+      <Script Src="Script.Js"></Script>
+    
+{%endblock body%}

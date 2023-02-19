@@ -1,0 +1,57 @@
+{% extends 'index.html' %}
+{%block title%}Filter Employee Data{%endblock title%}
+{% block body %}
+
+<Form action="/update/" method="post" align="center" style="padding:50px ; border:2px solid; margin:50px;">
+    {% csrf_token %}
+    <H4 style="font-size:40px">Filter Employees</H4>
+    <Div Class="Input-Section">
+      <Label>First Name <Span Class="Required-Color">*</Span></Label>
+      <br>
+      <Input
+        Type="Text"
+        Id="First-Name-Input"
+        name="f_name"
+        value="{{f_name}}"
+        
+      />
+    </Div>
+    {% comment %} <Div Class="Input-Section">
+      <Label>Last Name <Span Class="Required-Color">*</Span></Label>
+      <Input
+        Type="Text "
+        name="l_name"
+        Id="Last-Name-Input"
+        value="{{l_name}}"
+        
+      />
+    </Div> {% endcomment %}
+    <Div Class="Input-Section">
+      <Label>Department <Span Class="Required-Color">*</Span></Label>
+      <br>
+      <Input
+        Type="Text"
+        name="dept"
+        Id="dept"
+        value="{{dept}}"
+        
+      />
+    </Div>
+
+    <Div Class="Input-Section">
+      <Label>Role <Span Class="Required-Color">*</Span></Label>
+      <br>
+      <Input
+        Type="Text"
+        name="role"
+        Id="role"
+        value="{{role}}"
+        
+      />
+    </Div>
+
+    </Div>
+
+    <Button class="btn btn-info" Id="Submit-Button" style="margin-top:15px;margin-bottom:50px">Submit</Button>
+  </Form>
+{%endblock body%}
